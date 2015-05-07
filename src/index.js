@@ -4,25 +4,27 @@ var environment = require("environment"),
 
 
 var document = environment.document,
-    querySelector = document.querySelector;
+    nativeQuerySelector = document.querySelector;
 
 
-if (!querySelector) {
-    querySelector = function querySelector(selectors) {
+module.exports = querySelector;
+
+
+function querySelector(selectors, ownerDocument) {
+    ownerDocument = ownerDocument || document;
+
+    if (!ownerDocument.querySelector) {
+        ownerDocument.querySelector = nativeQuerySelector;
+    }
+
+    return ownerDocument.querySelector(selectors);
+}
+
+if (!nativeQuerySelector) {
+    nativeQuerySelector = function querySelector(selectors) {
         var elements = querySelectorAll(selectors, this);
         return (elements.length) ? elements[0] : null;
     };
 }
 
-document.querySelector = getPrototypeOf(document).querySelector = querySelector;
-
-
-module.exports = function(selectors, ownerDocument) {
-    ownerDocument = ownerDocument || document;
-
-    if (!ownerDocument.querySelector) {
-        ownerDocument.querySelector = querySelector;
-    }
-
-    return ownerDocument.querySelector(selectors);
-};
+document.querySelector = getPrototypeOf(document).querySelector = nativeQuerySelector;
