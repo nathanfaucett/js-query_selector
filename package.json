@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "environment": "git://github.com/nathanfaucett/environment",
-    "query_selector_all": "git://github.com/nathanfaucett/query_selector_all",
-    "get_prototype_of": "git://github.com/nathanfaucett/get_prototype_of"
+    "query_selector_all": "git://github.com/nathanfaucett/query_selector_all"
   }
 }

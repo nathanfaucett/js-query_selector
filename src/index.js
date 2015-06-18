@@ -1,6 +1,5 @@
 var environment = require("environment"),
-    querySelectorAll = require("query_selector_all"),
-    getPrototypeOf = require("get_prototype_of");
+    querySelectorAll = require("query_selector_all");
 
 
 var document = environment.document,
@@ -27,4 +26,4 @@ if (!nativeQuerySelector) {
     };
 }
 
-document.querySelector = getPrototypeOf(document).querySelector = nativeQuerySelector;
+document.querySelector = nativeQuerySelector;
