@@ -7,6 +7,10 @@
     "url": "https://github.com/nathanfaucett/query_selector.git"
   },
   "main": "src/index.js",
+  "scripts": {
+    "test": "npm run test-browser-local",
+    "test-browser-local": "zuul --local 9999 --ui tape -- ./test"
+  },
   "keywords": [
     "query_selector",
     "query_selector.js"
@@ -16,13 +20,14 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-jsbeautifier": "^0.2.7",
-    "mocha": "^2.2.4",
-    "zombie": "^2.5.1"
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-jsbeautifier": "^0.2.10",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.0",
+    "zuul": "^3.6.0"
   },
   "dependencies": {
-    "environment": "git://github.com/nathanfaucett/environment",
-    "query_selector_all": "git://github.com/nathanfaucett/query_selector_all"
+    "environment": "git://github.com/nathanfaucett/environment.git",
+    "query_selector_all": "git://github.com/nathanfaucett/query_selector_all.git"
   }
 }
