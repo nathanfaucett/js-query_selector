@@ -1,4 +1,4 @@
 querySelector
 =======
 
-querySelector for the browser and node.js
+querySelector polyfill

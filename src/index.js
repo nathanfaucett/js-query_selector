@@ -1,5 +1,5 @@
-var environment = require("environment"),
-    querySelectorAll = require("query_selector_all");
+var environment = require("@nathanfaucett/environment"),
+    querySelectorAll = require("@nathanfaucett/query_selector_all");
 
 
 var document = environment.document,
